@@ -49,4 +49,12 @@ export default defineConfig({
     testMatch: ["./tests/**/*.test.jsx"],
     globals: true,
   },
+  resolve: {
+    alias: [
+    {
+      find: './runtimeConfig',
+      replacement: './runtimeConfig.browser', // ensures browser compatible version of AWS JS SDK is used
+    },
+  ]
+}
 });
