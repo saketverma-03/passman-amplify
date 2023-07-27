@@ -3,11 +3,14 @@ import { getAllPasswords } from "../server/user";
 
 export default function usePasswordList(userID) {
   const [passwordList, setPasswordList] = useState([]);
-  useEffect(() => {
+  function handleRefreshList() {
     getAllPasswords(userID).then((res) =>
       setPasswordList([...res.data.listPasswords.items])
     );
+    console.log("i was called");
+  }
+  useEffect(() => {
+    handleRefreshList();
   }, []);
-
-  return [passwordList];
+  return [passwordList, () => handleRefreshList()];
 }
