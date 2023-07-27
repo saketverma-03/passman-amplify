@@ -1,4 +1,4 @@
-import { API as amplifApi } from "aws-amplify";
+import { API } from "aws-amplify";
 
 /* List */
 export async function getAllPasswords(userId) {
@@ -15,7 +15,7 @@ export async function getAllPasswords(userId) {
     }
   }
   `;
-  const list = await amplifApi.graphql({
+  const list = await API.graphql({
     query: listAllPasswordForuser(userId),
   });
   return list;
@@ -24,7 +24,7 @@ export async function getAllPasswords(userId) {
 /* Create */
 export async function createServiceCredentials(newCredentials) {
   const { product, userId, password, username } = newCredentials;
-  const res = await amplifApi.graphql({
+  const res = await API.graphql({
     query: `mutation MyMutation {
     createPasswords(
       input: {username: "${username}", password: "${password}", userId: "${userId}", website: "${product}"}
@@ -47,7 +47,7 @@ export async function updateCredentials(values) {
     id
   }
 }`;
-  return await amplifApi.graphql({ query: mutationUpdateCredentials });
+  return await API.graphql({ query: mutationUpdateCredentials });
 }
 
 /* Delete */
@@ -59,5 +59,5 @@ export async function mutationDeleteCredential(id, _version) {
         _deleted
       }
     }`;
-  return await amplifApi.graphql({ query: query });
+  return await API.graphql({ query: query });
 }
