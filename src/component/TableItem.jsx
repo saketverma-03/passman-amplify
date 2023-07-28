@@ -52,6 +52,7 @@ function Table_Item(props) {
       variant: "subtle",
     });
     onClose();
+    window.location.reload();
   }
 
   return (
