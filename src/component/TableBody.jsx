@@ -14,7 +14,6 @@ import {
 const Table_body = ({ list }) => {
   return (
     <TableContainer>
-      {/* <Button onClick={() => console.log(list)}>lol</Button> */}
       <Table
         colorScheme={"dark"}
         position={"absolute"}

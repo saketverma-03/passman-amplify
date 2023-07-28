@@ -56,7 +56,6 @@ const UpdatePassword = (props) => {
 
   function handleReset() {
     const { id, password, username, _version, website } = location.state;
-    console.log(location.state);
     setValues({ ...values, id, password, username, _version, website });
   }
 

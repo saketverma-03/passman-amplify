@@ -41,7 +41,7 @@ function Table_Item(props) {
     try {
       await mutationDeleteCredential(id, _version);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
 
     toast({

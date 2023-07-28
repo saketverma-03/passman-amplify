@@ -7,7 +7,6 @@ export default function usePasswordList(userID) {
     getAllPasswords(userID).then((res) =>
       setPasswordList([...res.data.listPasswords.items])
     );
-    console.log("i was called");
   }
   useEffect(() => {
     handleRefreshList();
