@@ -3,7 +3,11 @@
 
 
 [Live Demo](https://master.d3uii8wyyckpm1.amplifyapp.com/)
+> Demo Account
+- Username: saketverma831@gmail.com
+- password: 1234567890
 
+  
 Passman is crossplatfor Passwordmanager application which helps user to manage password and access them from different devices.
 
 interface image herer
